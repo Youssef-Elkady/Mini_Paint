@@ -8,7 +8,7 @@ import java.awt.*;
  *
  * @author taver
  */
-public class LineSegment implements Shape {
+public class LineSegment extends BasicShape implements Shape {
     private Point  Position, endPosition;
     private Color color,fillColor;
 
@@ -23,38 +23,13 @@ public class LineSegment implements Shape {
         this.endPosition = endPosition;
     }
 
-        // set position
-    public void setPosition(java.awt.Point position){
-       this.Position =position;  
-    }
-    public java.awt.Point getPosition(){
-       return this.Position;      
-    }
-    // colorise
-    public void setColor(java.awt.Color color){
-        this.color = color;
-    }
-    public java.awt.Color getColor(){
-        return this.color;
-    }
-    public void setFillColor (java.awt.Color color){
-        this.fillColor = color;
-    }
-    public java.awt.Color getFillColor(){
-        return fillColor;
-        
-    }
-//    public void DrawLine(Graphics g){
-//        DrawingFactory f = new DrawingFactory();
-//     //   f.drawline(this, g);
-//    }
     // redraw shape on canvas
     @Override
     public void draw (java.awt.Graphics canvas){
         
     Color oldColor = canvas.getColor();    
-    canvas.setColor(this.fillColor);
-    canvas.setColor(this.color);
+    canvas.setColor(super.getFillColor());
+    canvas.setColor(super.getColor());
     canvas.drawLine(this.getPosition().x,this.getPosition().y,this.endPosition.x,this.endPosition.y);
     canvas.setColor(oldColor);
 }

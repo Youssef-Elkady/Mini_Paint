@@ -33,7 +33,7 @@ public class ViewingPanel extends javax.swing.JPanel {
     }
     // redraws all shapes on canvas
     public void refresh(java.awt.Graphics canvas){
-        
+        repaint();
     }
 //       public void drawLine(LineSegment r) {
 //           

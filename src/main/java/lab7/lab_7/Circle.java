@@ -11,8 +11,8 @@ import java.awt.Point;
  *
  * @author taver
  */
-public class Circle implements Shape {
-     private Point  Position;
+public class Circle extends BasicShape implements Shape {
+    private Point  Position;
     private int radius;
     private Color color,fillColor;
 
@@ -23,39 +23,36 @@ public class Circle implements Shape {
     public void setRadius(int radius) {
         this.radius = radius;
     }
-    
-        // set position
-    public void setPosition(java.awt.Point position){
-       this.Position =position;  
-    }
-    public java.awt.Point getPosition(){
-       return this.Position;      
-    }
-    // colorise
-    public void setColor(java.awt.Color color){
-        this.color = color;
-    }
-    public java.awt.Color getColor(){
-        return this.color;
-    }
-    public void setFillColor (java.awt.Color color){
-        this.fillColor = color;
-    }
-    public java.awt.Color getFillColor(){
-        return fillColor;
-        
-    }
-//    public void DrawLine(Graphics g){
-//        DrawingFactory f = new DrawingFactory();
-//     //   f.drawline(this, g);
+//    
+//        // set position
+//    public void setPosition(java.awt.Point position){
+//       this.Position =position;  
 //    }
+//    public java.awt.Point getPosition(){
+//       return this.Position;      
+//    }
+//    // colorise
+//    public void setColor(java.awt.Color color){
+//        this.color = color;
+//    }
+//    public java.awt.Color getColor(){
+//        return this.color;
+//    }
+//    public void setFillColor (java.awt.Color color){
+//        this.fillColor = color;
+//    }
+//    public java.awt.Color getFillColor(){
+//        return fillColor;
+//        
+//    }
+
     // redraw shape on canvas
     @Override
     public void draw (java.awt.Graphics canvas){
     Color oldColor = canvas.getColor();    
-    canvas.setColor(this.fillColor);
+    canvas.setColor(super.getFillColor());
     canvas.fillOval(this.getPosition().x,this.getPosition().y,this.getRadius()*2,this.getRadius()*2);
-    canvas.setColor(this.color);
+    canvas.setColor(super.getColor());
     canvas.drawOval(this.getPosition().x,this.getPosition().y,this.getRadius()*2,this.getRadius()*2);
     canvas.setColor(oldColor);
 }

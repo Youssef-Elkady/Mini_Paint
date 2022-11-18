@@ -11,7 +11,7 @@ import java.awt.Point;
  *
  * @author taver
  */
-public class Square implements Shape {
+public class  Square extends BasicShape implements Shape {
     
     private Point  Position;
     private int width;
@@ -24,34 +24,13 @@ public class Square implements Shape {
     public void setWidth(int width) {
         this.width = width;
     }
-        // set position
-    public void setPosition(java.awt.Point position){
-       this.Position =position;  
-    }
-    public java.awt.Point getPosition(){
-       return this.Position;      
-    }
-    // colorise
-    public void setColor(java.awt.Color color){
-        this.color = color;
-    }
-    public java.awt.Color getColor(){
-        return this.color;
-    }
-    public void setFillColor (java.awt.Color color){
-        this.fillColor = color;
-    }
-    public java.awt.Color getFillColor(){
-        return fillColor;
-        
-    }
     // redraw shape on canvas
     @Override
     public void draw (java.awt.Graphics canvas){
     Color oldColor = canvas.getColor();    
-    canvas.setColor(this.fillColor);
+    canvas.setColor(super.getFillColor());
     canvas.fillRect(this.getPosition().x, this.getPosition().y, this.getWidth(), this.getWidth());
-    canvas.setColor(this.color);
+    canvas.setColor(super.getColor());
     canvas.drawRect(this.getPosition().x,this.getPosition().y,this.width,this.getWidth());
     canvas.setColor(oldColor);
 }

@@ -53,6 +53,7 @@ public class ViewingBoard extends javax.swing.JFrame implements Node, Cloneable 
         viewingPanel1 = new lab7.lab_7.ViewingPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Paint");
 
         addLine.setText("Line Segment");
         addLine.addActionListener(new java.awt.event.ActionListener() {
