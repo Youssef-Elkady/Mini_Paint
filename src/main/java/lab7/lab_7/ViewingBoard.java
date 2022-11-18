@@ -194,7 +194,7 @@ public class ViewingBoard extends javax.swing.JFrame implements Node, Cloneable 
         viewingPanel1.addShape(l);
      //   System.out.println(viewingPanel1.shapes.get(0));     
         itemListButton.addItem("Line" + viewingPanel1.shapes.indexOf(l));
-        viewingPanel1.repaint();
+        viewingPanel1.refresh(null);
     }//GEN-LAST:event_addLineActionPerformed
 
     private void itemListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListButtonActionPerformed
@@ -215,7 +215,7 @@ public class ViewingBoard extends javax.swing.JFrame implements Node, Cloneable 
         itemListButton.addItem("Rectangle" + viewingPanel1.shapes.indexOf(r));
 
       //  System.out.println(viewingPanel1.shapes.get(0));
-        viewingPanel1.repaint();
+        viewingPanel1.refresh(null);
     }//GEN-LAST:event_rectangleButtonActionPerformed
 
     private void circleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_circleButtonActionPerformed
@@ -230,7 +230,7 @@ public class ViewingBoard extends javax.swing.JFrame implements Node, Cloneable 
         itemListButton.addItem("Circle" + viewingPanel1.shapes.indexOf(c));
 
       //  System.out.println(viewingPanel1.shapes.get(0));
-        viewingPanel1.repaint();
+        viewingPanel1.refresh(null);
         
     }//GEN-LAST:event_circleButtonActionPerformed
 
@@ -246,7 +246,7 @@ public class ViewingBoard extends javax.swing.JFrame implements Node, Cloneable 
         itemListButton.addItem("Square" + viewingPanel1.shapes.indexOf(s));
 
       //  System.out.println(viewingPanel1.shapes.get(0));
-        viewingPanel1.repaint();
+        viewingPanel1.refresh(null);
     }//GEN-LAST:event_squareButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
@@ -256,7 +256,7 @@ public class ViewingBoard extends javax.swing.JFrame implements Node, Cloneable 
         }
         int index = itemListButton.getSelectedIndex();
         viewingPanel1.removeShape(viewingPanel1.shapes.get(index-1));
-        viewingPanel1.repaint();
+        viewingPanel1.refresh(null);
         itemListButton.removeItemAt(itemListButton.getSelectedIndex());
         
     }//GEN-LAST:event_deleteButtonActionPerformed
@@ -272,7 +272,7 @@ public class ViewingBoard extends javax.swing.JFrame implements Node, Cloneable 
         Color FillColor = JColorChooser.showDialog(null, "Select a filling color", initial);
         viewingPanel1.shapes.get(index-1).setColor(color);
         viewingPanel1.shapes.get(index-1).setFillColor(FillColor);
-        viewingPanel1.repaint();
+        viewingPanel1.refresh(null);
           
     }//GEN-LAST:event_ColorizeButtonActionPerformed
 

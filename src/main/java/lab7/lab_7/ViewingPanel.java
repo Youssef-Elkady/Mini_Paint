@@ -35,12 +35,7 @@ public class ViewingPanel extends javax.swing.JPanel {
     public void refresh(java.awt.Graphics canvas){
         repaint();
     }
-//       public void drawLine(LineSegment r) {
-//           
-//        r = new LineSegment(r.getPosition(),r.getLength(), r.getColor());
-//        r.setPosition(r.getPosition());
-//        r.setLength(r.getLength());
-//        JPanel panel = new JPanel();
+    
        @Override
         protected void paintComponent(Graphics g){
         super.paintComponent(g);
